@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherLens</title>
+
+    <!-- Link Font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Link CSS  -->
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <!-- Wrapper -->
+    <div class="wrapper">
+
+        <h1>weatherLens</h1>
+
+        <div class="tabContainer">
+            <p class="tab" data-userWeather>CURRENT REGION</p>
+            <p class="tab" data-searchWeather>SEARCH LOCATION</p>
+        </div>
+
+        <div class="container">
+
+            <!-- Grant Location Access  -->
+            <div class="grantLocationContainer subContainer">
+                <img src="./images/image-removebg.png" width="120" height="120" loading="lazy" />
+                <p>Enable Location Access</p>
+                <p>To get weather information of your location</p>
+                <button class="btn" data-grantAccess>Give Permission</button>
+            </div>
+
+            <div class="subContainer loadingContainer">
+                <img src="./images/load-grey.gif" height="120" />
+                <p>Loading</p>
+            </div>
+
+            <!-- Search Container -->
+            <form class="formContainer" data-searchForm>
+                <input type="text" placeholder="Search for city..." data-searchInput />
+                <button class="btn" type="submit">
+                    <img src="./Images/search.png" width="20" height="20" loading="lazy" />
+                </button>
+            </form>
+
+            <!-- Weather Info -->
+            <div class="userInfoContainer subContainer">
+
+                <!-- Location name and flag -->
+                <div class="name">
+                    <p class="change-font" data-cityName></p>
+                    <img data-countryFlag />
+                </div>
+
+                <p class="change-font" data-weatherDesc></p>
+                <img data-weatherIcon />
+                <p data-temp></p>
+
+                <div class="parameterContainer">
+
+                    <!-- Wind Speed -->
+                    <div class="parameter">
+                        <img src="Images/wind.png" alt="#" />
+                        <p>windspeed</p>
+                        <p class="parameterValue" data-windspeed></p>
+                    </div>
+
+                    <!-- Humidity -->
+                    <div class="parameter">
+                        <img src="Images/humidity.png" alt="#" />
+                        <p>humidity</p>
+                        <p class="parameterValue" data-humidity></p>
+                    </div>
+
+                    <!-- Clouds -->
+                    <div class="parameter">
+                        <img src="Images/cloud.png" alt="#" />
+                        <p>clouds</p>
+                        <p class="parameterValue" data-clouds></p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Location Not Found -->
+            <div class="errorContainer subContainer">
+                <img src="./Images/not-found.png" data-errorImg />
+                <p data-errorText></p>
+                <button class="btn" data-errorButton>Retry Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link Script  -->
+    <script src="./index.js" defer></script>
+
+</body>
+
+</html>
